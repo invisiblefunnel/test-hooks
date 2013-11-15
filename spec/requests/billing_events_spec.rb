@@ -1,9 +1,21 @@
 require 'spec_helper'
 
 describe "Billing Events" do
+  def stub_event(fixture_id)
+    stub_request(:get, "https://api.stripe.com/v1/events/#{fixture_id}").
+      to_return(:status => 200, :body => File.read(File.expand_path("../../support/fixtures/#{fixture_id}.json", __FILE__)))
+  end
+
   describe "customer.created" do
-    it "creates a customer" do
-      pending
+    before do
+      stub_event 'evt_customer_created'
+    end
+
+    it "is successful" do
+      post '/_billing_events', id: 'evt_customer_created'
+      expect(response.code).to eq "200"
+
+      # Additional expectations...
     end
   end
 end

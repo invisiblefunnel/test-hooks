@@ -1,0 +1,36 @@
+{
+  "id": "evt_customer_created",
+  "created": 1384544738,
+  "livemode": false,
+  "type": "customer.created",
+  "data": {
+    "object": {
+      "object": "customer",
+      "created": 1384544738,
+      "id": "cus_2wm5EgmRGEiyPO",
+      "livemode": false,
+      "description": "id:12345",
+      "email": "user@example.com",
+      "delinquent": false,
+      "metadata": {
+      },
+      "subscription": null,
+      "discount": null,
+      "account_balance": 0,
+      "cards": {
+        "object": "list",
+        "count": 0,
+        "url": "/v1/customers/cus_2wm5EgmRGEiyPO/cards",
+        "data": [
+
+        ]
+      },
+      "default_card": null,
+      "next_recurring_charge": null,
+      "active_card": null
+    }
+  },
+  "object": "event",
+  "pending_webhooks": 1,
+  "request": "iar_2wm5M67yu99gVP"
+}
