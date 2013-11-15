@@ -1,0 +1,10 @@
+development: &defaults
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: test-hooks_development
+  pool: 5
+
+test:
+  <<: *defaults
+  database: test-hooks_test
