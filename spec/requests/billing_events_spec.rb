@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe "Billing Events" do
-  def stub_event(fixture_id)
+  def stub_event(fixture_id, status = 200)
     stub_request(:get, "https://api.stripe.com/v1/events/#{fixture_id}").
-      to_return(:status => 200, :body => File.read("spec/support/fixtures/#{fixture_id}.json"))
+      to_return(status: status, body: File.read("spec/support/fixtures/#{fixture_id}.json"))
   end
 
   describe "customer.created" do
